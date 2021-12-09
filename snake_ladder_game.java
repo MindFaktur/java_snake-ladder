@@ -3,14 +3,14 @@ public class snake_ladder_game{
 
 	public static void main(String[] args){
 
-		while ( totalPoints <= 100 ){
+		while ( totalPoints < 100 ){
 			int choice = random_num(3,0);
 			int dice = random_num(6,1);
 
 			if ( choice == ladder ){
-				totalPoints += dice;
+				int c = ((totalPoints + dice) > 100) ? (totalPoints += 0): (totalPoints += dice);
 			}else if ( choice == snake ){
-				int c = ((totalPoints - dice) <= 0) ? (totalPoints = 0): (totalPoints -= dice);
+				int d = ((totalPoints - dice) <= 0) ? (totalPoints = 0): (totalPoints -= dice);
 			}else {
 				totalPoints += 0;
 			}
